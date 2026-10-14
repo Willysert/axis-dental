@@ -298,6 +298,7 @@ section { scroll-margin-top: 76px; }
 .faq-item[data-open] summary::after { transform: rotate(45deg); }
 .faq-item p { color: rgba(243,237,228,.85); padding: 0 0 24px; max-width: 64ch; }
 .reels.solo { grid-template-columns: minmax(0, 360px); justify-content: center; }
+@media (min-width: 761px) { #videos .reels { grid-template-columns: repeat(2, minmax(0, 380px)); justify-content: center; } }
 .steps-cta { display: flex; justify-content: center; margin-top: clamp(28px, 4vw, 44px); }
 .hero-foot { position: absolute; z-index: 1; left: 0; right: 0; bottom: 20px; display: grid; gap: 10px; justify-items: center; }
 .hero-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px clamp(16px, 2.4vw, 36px); padding-inline: var(--gutter); }
