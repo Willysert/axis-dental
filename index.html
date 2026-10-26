@@ -109,7 +109,11 @@ p { margin: 0; }
 
 /* Encabezado: transparente sobre la portada, blanco al hacer scroll */
 .top { position: fixed; inset: 0 0 auto 0; z-index: 40; padding-top: env(safe-area-inset-top, 0px); transition: background .3s, box-shadow .3s; }
-.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 18px; transition: padding .3s; }
+.top .wrap { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding-block: 18px; transition: padding .3s; }
+.proof { display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; letter-spacing: 0.04em; text-decoration: none; color: rgba(255,255,255,.92); text-shadow: 0 1px 12px rgba(0,0,0,.35); transition: color .3s; }
+.proof .stars { color: var(--gold-light); letter-spacing: 0.1em; transition: color .3s; }
+.top.solid .proof { color: var(--muted); text-shadow: none; }
+.top.solid .proof .stars { color: var(--gold-deep); }
 .nav { display: flex; align-items: center; gap: clamp(16px, 2.2vw, 32px); }
 .nav a:not(.btn) { font-size: var(--step--1); font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; color: rgba(255,255,255,.92); transition: color .2s; }
 @media (hover: hover) and (pointer: fine) { .nav a:not(.btn):hover { color: var(--gold-light); } }
@@ -371,6 +375,7 @@ fbq('track', 'PageView');
       <span class="brand-bar" aria-hidden="true"></span>
       <span class="brand-name"><b>AXIS</b><small>DENTAL STUDIO</small></span>
     </a>
+    <a class="proof" href="#testimonios" aria-label="5.0 de 5 estrellas, 5 opiniones en Google"><span class="stars" aria-hidden="true">★★★★★</span><span aria-hidden="true"><b>5.0</b> · 5 opiniones en Google</span></a>
   </div>
 </header>
 
@@ -385,7 +390,7 @@ fbq('track', 'PageView');
       </div>
     </div>
     <div class="hero-foot">
-      <p class="hero-note">Piso 10 · Blvd. Morazán · (+504) 8792-6121</p>
+      <p class="hero-note">(+504) 8792-6121</p>
       <nav class="hero-nav" aria-label="Principal">
         <a href="#testimonios">Testimonios</a>
         <a href="#servicios">Servicios</a>
