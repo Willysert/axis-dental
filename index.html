@@ -214,6 +214,14 @@ section { scroll-margin-top: 76px; }
 
 /* Videos */
 .videos { background: var(--shell); }
+.rating-sum { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 12px; margin: -28px 0 clamp(28px, 4vw, 44px); color: var(--muted); font-size: 0.95rem; }
+.rating-sum b { font-family: var(--font-display); font-weight: 500; font-size: var(--step-1); color: var(--ink); }
+.stars { color: var(--gold-deep); letter-spacing: 0.12em; }
+.reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: clamp(14px, 2vw, 24px); margin-bottom: clamp(36px, 5vw, 60px); }
+.review { margin: 0; display: flex; flex-direction: column; gap: 14px; padding: 26px 24px; background: var(--white); border-radius: var(--r-md); box-shadow: var(--shadow); }
+.review blockquote { margin: 0; font-size: var(--step-0); line-height: 1.6; flex: 1; overflow-wrap: anywhere; }
+.review figcaption { font-size: 0.9rem; color: var(--muted); }
+.review figcaption b { display: block; color: var(--ink); font-weight: 600; }
 .reels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2vw, 28px); }
 .reel { margin: 0; display: grid; gap: 14px; min-width: 0; }
 .reel video { width: 100%; aspect-ratio: 9 / 14; object-fit: cover; background: var(--sage-soft); border-radius: var(--r-md); box-shadow: var(--shadow); }
@@ -379,6 +387,29 @@ a, button, summary, [role="button"] { touch-action: manipulation; }
       <div class="center-head">
         <span class="eyebrow">Testimonios</span>
         <h2>Lo que dicen nuestros pacientes</h2>
+      </div>
+      <p class="rating-sum"><b>5.0</b><span class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</span><span>5 opiniones en Google</span></p>
+      <div class="reviews">
+        <figure class="review reveal">
+          <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+          <blockquote>“Muy buena atencion al cliente, el lugar es nitido, organizado y acogedor.”</blockquote>
+          <figcaption><b>Adrian Burgos</b>Reseña en Google · ayer</figcaption>
+        </figure>
+        <figure class="review reveal">
+          <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+          <blockquote>“Super buena atención y espacio muy comodo.”</blockquote>
+          <figcaption><b>o reyes</b>Reseña en Google · hace 2 días</figcaption>
+        </figure>
+        <figure class="review reveal">
+          <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+          <blockquote>“Muy buena atencion y servicio.”</blockquote>
+          <figcaption><b>robles vallas</b>Reseña en Google · hace 1 semana</figcaption>
+        </figure>
+        <figure class="review reveal">
+          <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+          <blockquote>“11/10”</blockquote>
+          <figcaption><b>Luis Jose Castro Marin</b>Reseña en Google · hace 2 días</figcaption>
+        </figure>
       </div>
       <div class="reels solo">
         <figure class="reel">
