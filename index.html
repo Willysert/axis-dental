@@ -221,7 +221,10 @@ section { scroll-margin-top: 76px; }
 .rating-sum { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 12px; margin: -28px 0 clamp(28px, 4vw, 44px); color: var(--muted); font-size: 0.95rem; }
 .rating-sum b { font-family: var(--font-display); font-weight: 500; font-size: var(--step-1); color: var(--ink); }
 .stars { color: var(--gold-deep); letter-spacing: 0.12em; }
-.reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: clamp(14px, 2vw, 24px); margin-bottom: clamp(36px, 5vw, 60px); }
+.reviews { --g: clamp(14px, 2vw, 24px); display: flex; flex-wrap: wrap; justify-content: center; gap: var(--g); margin-bottom: clamp(36px, 5vw, 60px); }
+.reviews .review { flex: 0 0 100%; min-width: 0; }
+@media (min-width: 600px) { .reviews .review { flex-basis: calc((100% - var(--g)) / 2); } }
+@media (min-width: 960px) { .reviews .review { flex-basis: calc((100% - 2 * var(--g)) / 3); } }
 .review { margin: 0; display: flex; flex-direction: column; gap: 14px; padding: 26px 24px; background: var(--white); border-radius: var(--r-md); box-shadow: var(--shadow); }
 .review blockquote { margin: 0; font-size: var(--step-0); line-height: 1.6; flex: 1; overflow-wrap: anywhere; }
 .review figcaption { font-size: 0.9rem; color: var(--muted); }
@@ -232,6 +235,7 @@ section { scroll-margin-top: 76px; }
 .reel figcaption { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; text-align: center; overflow-wrap: anywhere; }
 .reel figcaption b { font-family: var(--font-display); font-weight: 500; font-size: var(--step-1); line-height: 1.2; }
 .reel figcaption span { font-size: 0.9rem; color: var(--muted); }
+.reel figcaption a { color: var(--gold-deep); font-weight: 600; text-underline-offset: 3px; }
 @media (max-width: 760px) {
   .reels { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 76%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }
   .reel { scroll-snap-align: start; }
@@ -310,7 +314,7 @@ section { scroll-margin-top: 76px; }
 .faq-item[data-open] summary::after { transform: rotate(45deg); }
 .faq-item p { color: rgba(243,237,228,.85); padding: 0 0 24px; max-width: 64ch; }
 .reels.solo { grid-template-columns: minmax(0, 360px); justify-content: center; }
-@media (min-width: 761px) { #videos .reels { grid-template-columns: repeat(2, minmax(0, 380px)); justify-content: center; } }
+@media (min-width: 761px) { #videos .reels, #testimonios .reels { grid-template-columns: repeat(2, minmax(0, 380px)); justify-content: center; } }
 .steps-cta { display: flex; justify-content: center; margin-top: clamp(28px, 4vw, 44px); }
 .hero-foot { position: absolute; z-index: 1; left: 0; right: 0; bottom: 20px; display: grid; gap: 10px; justify-items: center; }
 .hero-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px clamp(16px, 2.4vw, 36px); padding-inline: var(--gutter); }
@@ -412,6 +416,11 @@ fbq('track', 'PageView');
       <div class="reviews">
         <figure class="review reveal">
           <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
+          <blockquote>“Buena atención muy capaces.”</blockquote>
+          <figcaption><b>Malcon Isaac Molina Arteaga</b>Reseña en Google</figcaption>
+        </figure>
+        <figure class="review reveal">
+          <div class="stars" role="img" aria-label="5 de 5 estrellas">★★★★★</div>
           <blockquote>“Muy buena atencion al cliente, el lugar es nitido, organizado y acogedor.”</blockquote>
           <figcaption><b>Adrian Burgos</b>Reseña en Google</figcaption>
         </figure>
@@ -431,10 +440,14 @@ fbq('track', 'PageView');
           <figcaption><b>Luis Jose Castro Marin</b>Reseña en Google</figcaption>
         </figure>
       </div>
-      <div class="reels solo">
+      <div class="reels">
         <figure class="reel">
           <video controls playsinline preload="metadata" poster="img/poster-testimonio.jpg"><source src="video/testimonio.mp4" type="video/mp4"></video>
           <figcaption><b>Testimonio de paciente</b><span>Su experiencia en Axis</span></figcaption>
+        </figure>
+        <figure class="reel">
+          <video controls playsinline preload="metadata" poster="img/poster-testimonio-aliz.jpg"><source src="video/testimonio-aliz.mp4" type="video/mp4"></video>
+          <figcaption><b>Testimonio de paciente</b><span><a href="https://www.instagram.com/alizsmp" target="_blank" rel="noopener">@alizsmp</a> en Instagram</span></figcaption>
         </figure>
       </div>
       <div class="steps-cta reveal"><a class="btn btn-gold" href="https://g.page/r/CWsJAFtX-xasEBM/review" target="_blank" rel="noopener">★ Déjanos tu reseña en Google</a></div>
